@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search } from 'lucide-react';
+import React from "react";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Search } from "lucide-react";
 
 interface ProductSearchProps {
   searchTerm: string;
@@ -18,7 +24,7 @@ export const ProductSearch: React.FC<ProductSearchProps> = ({
   onSearchChange,
   category,
   onCategoryChange,
-  categories
+  categories,
 }) => {
   return (
     <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -26,7 +32,7 @@ export const ProductSearch: React.FC<ProductSearchProps> = ({
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
         <Input
           type="text"
-          placeholder="Search products..."
+          placeholder="Procure por produtos..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
           className="pl-10"
