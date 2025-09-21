@@ -7,19 +7,21 @@ import { Cart } from "@/components/Cart";
 import { ProductSearch } from "@/components/ProductSearch";
 import { products, categories } from "@/data/products";
 import { Badge } from "@/components/ui/badge";
-import { Building2, Phone, MapPin } from "lucide-react";
+import { Building2, Phone, MapPin, X } from "lucide-react";
 
 function CatalogContent() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  const [selectedCategory, setSelectedCategory] = useState(
+    "Todas as categorias"
+  );
 
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
-      const matchesSearch =
+      const matchesSearch: boolean =
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory =
-        selectedCategory === "All Categories" ||
+      const matchesCategory: boolean =
+        selectedCategory === "Todas as Categorias" ||
         product.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
