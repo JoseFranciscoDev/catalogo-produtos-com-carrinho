@@ -66,12 +66,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {isInCart ? (
             <>
               <Package className="w-4 h-4 mr-2" />
-              Added to Selection
+              Adicionado ao carrinho
             </>
           ) : (
             <>
               <ShoppingCart className="w-4 h-4 mr-2" />
-              Add to Selection
+              Adicionar ao carrinho
             </>
           )}
         </Button>
