@@ -12,7 +12,7 @@ import { Building2, Phone, MapPin, X } from "lucide-react";
 function CatalogContent() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(
-    "Todas as categorias"
+    "Todas as Categorias"
   );
 
   const filteredProducts = useMemo(() => {
@@ -22,7 +22,8 @@ function CatalogContent() {
         product.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory: boolean =
         selectedCategory === "Todas as Categorias" ||
-        product.category === selectedCategory;
+        product.category === selectedCategory ||
+        selectedCategory == "";
       return matchesSearch && matchesCategory;
     });
   }, [searchTerm, selectedCategory]);
